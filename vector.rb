@@ -1,4 +1,4 @@
-# 課題4 D1205 石倉智貴
+# 課題4(変更) D1205 石倉智貴
 
 #Vectorクラスを定義
 class Vector
@@ -14,10 +14,24 @@ class Vector
     return"(#{@x},#{@y})"
   end
 
-  #lengthメソッド
-  def length
-    return"#{Math::sqrt(@x**2 + @y**2)}"
+  def x
+    @x
+  end
+
+  def y
+    @y
+  end
+
+  #addメソッド
+  def add(v)
+    v3x=@x+v.x
+    v3y=@y+v.y
+    Vector.new(v3x,v3y)
   end
 
 end
 
+v1=Vector.new(1,2)
+v2=Vector.new(3,4)
+v3=v1.add(v2)
+puts v3.to_s
